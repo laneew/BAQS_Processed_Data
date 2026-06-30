@@ -13,7 +13,7 @@ gas<-"NO_NOy"
 
 current_date<-sprintf("%s_%s-",today(),sprintf("%02d", hour(Sys.time())-2))
 
-git_files_to_commit<-c()
+git_files_to_commit<-"C:/Users/laneew/Desktop/BAQS_Processed_Data/Raw_Data/"
 # Format the month to ensure it has two digits
 month_padded <- sprintf("%02d", month(current_date))
 
