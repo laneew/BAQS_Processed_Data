@@ -11,9 +11,9 @@ library(htmlwidgets)
 library(purrr)
 
 #saying where to save the processed minute data and what to call the file
-minute_data_output_filepath <-str_remove(rc_fl,"Raw_Data/Raw_Data/")
+minute_data_output_filepath <-str_remove(raw_file,"Raw_Data/Raw_Data/")
 #Load the data
-NO_NOy <- map_dfr(rc_fl, ~ {
+NO_NOy <- map_dfr(raw_file, ~ {
   df <- read_csv(.x, show_col_types = FALSE)
   select(df, -any_of("NOYCNC1"))  #some of the files have an erroneous extra column called NOYCNC1, when we import the files we will discard this column as it is an erronous column
 })
