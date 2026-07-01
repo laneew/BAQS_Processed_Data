@@ -19,7 +19,7 @@ month_padded <- sprintf("%02d", month(current_date))
 
 git_directory<-sprintf("C:/Users/laneew/Desktop/BAQS_Processed_Data/Raw_Data/Raw_Data/%s/%s-%s/",gas,year(current_date),month_padded)
 
-processed_directory<-sprintf("C:/Users/laneew/Desktop/BAQS_Processed_Data/%s/%s-%s",gas,year(current_date),month_padded)
+processed_directory<-sprintf("C:/Users/laneew/Desktop/BAQS_Processed_Data/Processed_Data/%s/%s-%s",gas,year(current_date),month_padded)
 
 yesterday<-sprintf("%s_%s-",today()-1,sprintf("%02d", hour(Sys.time())-1))
 
@@ -47,7 +47,7 @@ for(pat in pattern){
 }
 
 
-write.csv(live_data,sprintf("C:/Users/laneew/Desktop/BAQS_Processed_Data/%s/Active_Data_%s.csv",gas,gas))
+write.csv(live_data,sprintf("C:/Users/laneew/Desktop/BAQS_Processed_Data/Processed_Data/%s/Active_Data_%s.csv",gas,gas))
 
 colnames(live_data)<-c("date",gas_data,"Flag")
 live_data$date<-as.POSIXct(live_data$date,format="%Y-%m-%d %H:%M:%S",tz="UTC")
@@ -58,11 +58,11 @@ formatted_data <- dygraph(formatted_data,
         ylab = HTML("NO/ NOy (ppb)")) %>%
   dyOptions(labelsUTC = TRUE)
 
-save_html(formatted_data,sprintf("C:/Users/laneew/Desktop/BAQS_Processed_Data/Active_Data_%s.html",gas))
+save_html(formatted_data,sprintf("C:/Users/laneew/Desktop/BAQS_Processed_Data/Processed_Data/Active_Data_%s.html",gas))
 
 git_files_to_commit<-c(git_files_to_commit,
-                       sprintf("C:/Users/laneew/Desktop/BAQS_Processed_Data/%s/Active_Data_%s.csv",gas,gas),
-                       sprintf("C:/Users/laneew/Desktop/BAQS_Processed_Data/Active_Data_%s.html",gas))
+                       sprintf("C:/Users/laneew/Desktop/BAQS_Processed_Data/Processed_Data/%s/Active_Data_%s.csv",gas,gas),
+                       sprintf("C:/Users/laneew/Desktop/BAQS_Processed_Data/Processed_Data/Active_Data_%s.html",gas))
 
 
 git_directory_checked<-c()
