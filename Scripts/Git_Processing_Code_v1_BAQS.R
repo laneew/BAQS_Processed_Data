@@ -31,17 +31,23 @@ gas_data<-unlist(str_split(gas,"_"))
 live_data<-c()
 for(pat in pattern){
   recent_file<-list.files(path=processed_directory,pattern=pat,full.names=TRUE)
-  for(rc_fl in recent_file){
-    if(is_empty(rc_fl)){
-      raw_file<-list.files(path=git_directory,pattern=pat,full.names=TRUE)
-      if(!is_empty(raw_file)){
-        if(file.exists(raw_file)){
+  if(is_empty(recent_file)){
+    raw_file<-list.files(path=git_directory,pattern=pat,full.names=TRUE)
+    if(!is_empty(raw_file)){
+      for(rw_fl in raw_file){
+        if(file.exists(rw_fl)){
           source(sprintf("C:/Users/laneew/Desktop/BAQS_Processed_Data/Scripts/%s_analyser-processing_v2.R",gas))
         }
       }
-    }else if(file.exists(rc_fl)){
+    }
+  }
+  recent_file<-list.files(path=processed_directory,pattern=pat,full.names=TRUE)
+  if(!is_empty(recent_file)){
+    for(rc_fl in recent_file){
+      if(file.exists(rc_fl)){
         working_file<-read.csv(rc_fl)
         live_data<-rbind(live_data,working_file)
+      }
     }
   }
 }

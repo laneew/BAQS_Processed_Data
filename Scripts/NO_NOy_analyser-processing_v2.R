@@ -11,7 +11,15 @@ library(htmlwidgets)
 library(purrr)
 
 #saying where to save the processed minute data and what to call the file
-minute_data_output_filepath <-str_remove(raw_file,"Raw_Data/Raw_Data/")
+minute_data_output_filepath <-str_replace(str_remove(raw_file,"Raw_Data/Raw_Data/"),
+                                          "Data/NO_","Data/Processed_Data/NO_")
+
+# Create the output directory if it doesn't exist
+output_dir <- dirname(minute_data_output_filepath)
+if (!dir.exists(output_dir)) {
+  dir.create(output_dir, recursive = TRUE)
+}
+
 #Load the data
 NO_NOy <- map_dfr(raw_file, ~ {
   df <- read_csv(.x, show_col_types = FALSE)
