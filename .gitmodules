@@ -1,3 +1,6 @@
 [submodule "Raw_Data"]
 	path = Raw_Data
 	url = https://github.com/laneew/baqs_raw_data
+[submodule "BAQS_Scripts"]
+	path = BAQS_Scripts
+	url = https://github.com/laneew/BAQS_Scripts
