@@ -1,18 +1,8 @@
 # BAQS_Processed_Data
-Processed BAQS Data:
 
-Data is updated at hourly intervals.
-<ul>
-        <a href="Active_Data_NO_NOy.html">> NO-NOy Test Live Data Available</a><br/>
-        <a href="Active_Data_NO2.html">> NO2 Test Live Data Available</a><br/>
-        <a href="Active_Data_SO2.html">> SO2 Test Live Data Available</a>
-</ul>
+A repository for Live NO, NOy, NO2, SO2, NH3 and O3 data from the Birmingham Air Quality Supersite (Birmingham, UK). The available data is pre-ratified but has been through basic processing to flag out-of-spec values.
 
-Comparison of NO, NO2 and SO2 gaseous data:
-<ul>
-        <a href="Active_Data_All.html">> Live Data Available</a><br/>
-</ul>
+Live graphs are available at: https://laneew.github.io/BAQS_Processed_Data/
 
-Working on:
-  > O3
+Ratified data is available at: https://dcsbeddows.github.io/baqs_data/
 
