@@ -38,7 +38,9 @@
 <p1>Updated at: </p1>
         <p2 id="Updated"></p2>
 <Script>
-        const UpdateTime = new Date();
+        const UpdateDate = new Date();
+        let UpdateTime = UpdateDate.getUTCDate() + "/" + UpdateDate.getUTCMonth() + "/" + UpdateDate.getUTCFullYear() + " " + 
+                UpdateDate.getUTCHours() + ":" + UpdateDate.getUTCMinutes() + ":" + UpdateDate.getUTCSeconds() + "UTC";
         document.getElementById("Updated").innerHTML = UpdateTime;
 </Script>
 </body>
