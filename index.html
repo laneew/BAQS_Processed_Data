@@ -15,6 +15,10 @@
                 a{font-size:1vw;}
         </style>
 </head>
+<Script>
+        const UpdateTime = new Date();
+        document.getElementByID('Updated').innerHTML = UpdateTime;
+</Script>
 <body>
         <h1>BAQS Gas Data</h1>
                 <p1>Below are links to the plots of the gas data collected at the Birmingham Air Quality Supersite (Birmingham, UK).
@@ -35,8 +39,6 @@
 <h2>Working on:</h2>
         <p1>PM data</p1>
 <br><br/>
-<p1>Updated at:</p1>
-        <Script>
-        new Date()</Script>
+<p1>Updated at:<div id='Updated'></div></p1>
 </body>
 </html>
