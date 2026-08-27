@@ -4,3 +4,9 @@
 [submodule "BAQS_Scripts"]
 	path = BAQS_Scripts
 	url = https://github.com/laneew/BAQS_Scripts
+[submodule "BAQS_ACSM"]
+	path = BAQS_ACSM
+	url = https://github.com/laneew/BAQS_ACSM
+[submodule "BAQS_Aerosols"]
+	path = BAQS_Aerosols
+	url = https://github.com/laneew/BAQS_Aerosols
